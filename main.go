@@ -238,23 +238,23 @@ func main() {
 
 	// insert the bson object slice using InsertMany()
 	log.Println("inserting prev month...")
-	resultsInsPrevMonth, err := jabBulColl.InsertMany(ctx, jabBulPrevMonthList)
+	_, err = jabBulColl.InsertMany(ctx, jabBulPrevMonthList)
 	// check for errors in the insertion
 	if err != nil {
 		panic(err)
 	}
 	// display the ids of the newly inserted objects
-	log.Println(resultsInsPrevMonth.InsertedIDs)
+	//log.Println(resultsInsPrevMonth.InsertedIDs)
 
 	// insert the bson object slice using InsertMany()
 	log.Println("inserting this month...")
-	resultsInsThisMonth, err := jabBulColl.InsertMany(ctx, jabBulThisMonthList)
+	_, err = jabBulColl.InsertMany(ctx, jabBulThisMonthList)
 	// check for errors in the insertion
 	if err != nil {
 		panic(err)
 	}
 	// display the ids of the newly inserted objects
-	log.Println(resultsInsThisMonth.InsertedIDs)
+	//log.Println(resultsInsThisMonth.InsertedIDs)
 
 }
 
