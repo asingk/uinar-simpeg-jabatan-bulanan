@@ -4,10 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/joho/godotenv"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	"io"
 	"log"
 	"net/http"
@@ -15,6 +11,11 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type DafPegResp struct {
@@ -163,7 +164,7 @@ type JabatanBulanan struct {
 	Tahun             int
 	Bulan             int
 	ImplementasiRemun int `bson:"implementasiRemun,omitempty"`
-	Pajak             int `bson:"pajak,omitempty"`
+	Pajak             int `bson:"pajak"`
 	UangMakanHarian   int `bson:"uangMakanHarian,omitempty"`
 }
 
