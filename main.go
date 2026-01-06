@@ -188,9 +188,6 @@ func init() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("No .env file found")
 	}
-	if err := godotenv.Load(); err != nil {
-		log.Println("No .env file found")
-	}
 	log.Println("connecting to db...")
 	dbUrl := os.Getenv("MONGODB_URI")
 	clientOptions := options.Client().ApplyURI(dbUrl)
